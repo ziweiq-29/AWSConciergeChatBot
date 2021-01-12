@@ -1,0 +1,111 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Dinning Concierge Chatbot"
+  description: >
+    Cloud Computing - GY9223, 
+    Chatbot Application,
+    by Changhan Xie, Ziwei Qiu
+schemes:
+- "https"
+basePath: "/v1"
+produces:
+  - "application/json"
+paths:
+  /chatbot:
+    post:
+      tags:
+      - "Chatbot"
+      summary: "to be summarized..."
+      description: "to be described..."
+      operationId: "LF0"
+      # consumes:
+      # - "application/json"
+      # - "application/xml"
+      produces:
+      - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "to be described..."
+          required: true
+          schema:
+            $ref: '#/definitions/BotRequest'
+      responses:
+        '200':
+          description: "A Chatbot response"
+          schema:
+            $ref: '#/definitions/BotResponse'
+        '405':
+          description: "Invalid input"
+          schema: 
+            $ref: '#/definitions/Error'
+    get:
+      tags:
+      - "Chatbot"
+      summary: "to be summarized ..."
+      description: "to be described ..."
+      operationId: "LF1"
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: "successful operation"
+          schema:
+            $ref: '#/definitions/BotRequest'
+        '400':
+          description: "Invalid status value"
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  BotRequest:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/Message'
+  BotResponse:
+    type: object
+    properties:
+      messages:
+        type: array
+        items:
+          $ref: '#/definitions/Message'
+  Message:
+    type: object
+    properties:
+      type:
+        type: string
+      unstructured:
+        $ref: '#/definitions/UnstructuredMessage'
+  UnstructuredMessage:
+    type: object
+    properties:
+      id:
+        type: string
+      text:
+        type: string
+      timestamp:
+        type: string
+        format: datetime
+        
+  User:
+    type: object
+    properties:
+      userID:
+        type: integer
+      userName:
+        type: string
+      password:
+        type: string
+        
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

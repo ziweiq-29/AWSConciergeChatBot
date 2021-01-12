@@ -1,0 +1,50 @@
+{
+  "invocationSource": "DialogCodeHook",
+  "alternativeIntents": [
+    {
+      "intentName": "AMAZON.FallbackIntent",
+      "nluIntentConfidence": null,
+      "slots": {}
+    },
+    {
+      "intentName": "ThankYouIntent",
+      "nluIntentConfidence": {
+        "score": 0.48
+      },
+      "slots": {}
+    },
+    {
+      "intentName": "GreetingIntent",
+      "nluIntentConfidence": {
+        "score": 0.35
+      },
+      "slots": {}
+    }
+  ],
+  "botVersion": "$LATEST",
+  "dialogState": "ElicitSlot",
+  "intentName": "DiningSuggestionIntent",
+  "message": "I need your email address so that I can send you my findings.",
+  "messageFormat": "PlainText",
+  "nluIntentConfidence": {
+    "score": 1
+  },
+  "userId": "1234",
+  "responseCard": null,
+  "sentimentResponse": null,
+  "sessionAttributes": {},
+  "sessionId": "2020-10-17T02:40:55.043Z-yWESTeix",
+  "slotToElicit": "Phone",
+  "currentIntent": {
+    "name": "DiningSuggestionIntent",
+    "nluIntentConfidenceScore": "score",
+    "slots": {
+      "Cuisine": "seafood",
+      "Date": "2020-10-20",
+      "Location": "nothisplace",
+      "PartySize": "5",
+      "Email": "incorrectemail.com",
+      "Time": "-17:00"
+    }
+  }
+}
